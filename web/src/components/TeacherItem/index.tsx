@@ -15,9 +15,9 @@ function TeacherItem () {
         </header>
         
         <p>
-            Testre tetste atesweate wtseaswte 
+            Mussum Ipsum, cacilds vidis litro abertis
             <br /><br />
-            Testre tetste atesweate wtseaswteTestre tetste atesweate wtseaswte 
+            Pra lá , depois divoltis porris, paradis. Mé faiz elementum girarzis, nisi eros vermeio. Per aumento de cachacis, eu reclamis. Sapien in monti palavris qui num significa nadis i pareci latim.
         </p>
 
         <footer>
