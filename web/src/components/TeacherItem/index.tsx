@@ -1,37 +1,56 @@
 import React from 'react';
-import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
+import api from '../../services/api';
 
-import './styles.css';
+import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
-function TeacherItem () {
+import './style.css'
+
+export interface Teacher {
+    id: number;
+    avatar: string;
+    bio: string;
+    cost: number;
+    name: string;
+    subject: string;
+    whatsapp: number;
+}
+
+interface TeacherItemProps {
+    teacher: Teacher
+}
+
+const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({ teacher }) =>{
+    function createNewConnection (){
+        api.post('connections', {
+            user_id: teacher.id,
+        })
+    }
+
     return (
         <article className="teacher-item">
-        <header>
-            <img src="https://pbs.twimg.com/profile_images/969383178279538688/io6WpxVE_400x400.jpg" alt="T'Challa"/>
-            <div>
-                <strong>T'Challa</strong>
-                <span>Black Culture</span>
-            </div>
-        </header>
-        
-        <p>
-            Mussum Ipsum, cacilds vidis litro abertis
-            <br /><br />
-            Pra lá , depois divoltis porris, paradis. Mé faiz elementum girarzis, nisi eros vermeio. Per aumento de cachacis, eu reclamis. Sapien in monti palavris qui num significa nadis i pareci latim.
-        </p>
-
-        <footer>
-            <p>
-                Preço/hora
-                <strong>R$ 100,00</strong>
-            </p>
-            <button type="button">
-                <img src={whatsappIcon} alt="Whatsapp"/>
-                Entrar em contato
-            </button>
-        </footer>
-
-    </article>
+            <header>
+                <img src={teacher.avatar} alt={teacher.name}/>
+                <div>
+                    <strong>{teacher.name}</strong>
+                    <span>{teacher.subject}</span>
+                </div>
+            </header>
+            <p>{teacher.bio}</p>
+            <footer>
+                <p>
+                    Price/Hour
+                    <strong>{teacher.cost}</strong>
+                </p>
+                <a 
+                    target="_blank"
+                    onClick={createNewConnection} 
+                    href={`https://wa.me/${teacher.whatsapp}?text=Hello%20There`}
+                >
+                    <img src={whatsappIcon} alt="Whatsapp"/>
+                    Contact
+                </a>
+            </footer>
+        </article>
     )
 }
 
