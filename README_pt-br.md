@@ -1,15 +1,15 @@
-English | [Portuguese](README_pt-br.md)
+[Inglês](/README.md) | Português
 
 # NLW#2 Proff
 
-## 1. Purpose
-Manage teacher registration and contract
+## 1. Objetivo
+Gerenciar cadastro e contrato de professores
 
-## 2. The solution
-Platform for registration and contract of teachers for web and mobile, using Typescript based on NodeJs, React and React Native
+## 2. A solução
+Plataforma para cadastro e contrato de professores para web e mobile, utilizando Typescript com base em NodeJs, React e React Native
 
-## 3. Prerequisites
-Install NodeJs and the dependencies
+## 3. Pré Requisitos
+Instalar o NodeJs e as dependencias
 ```bash
 npm install
 ```
@@ -25,7 +25,7 @@ npm run dev
 npm start
 ```
 
-## 5. Technologies
+## 5. Tecnologias
 - [NodeJs](https://github.com/nodejs/node)
 - [ReactJs](https://github.com/reactjs/reactjs.org)
 - [React Native](https://github.com/facebook/react-native)
